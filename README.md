@@ -1,1 +1,1 @@
-# database-java
+This code enables to connect our database with java, then we provided some options like add, update, remove and search an employee in the database. Via console user selects an option and depending on the resolved option, a constant is returned , based on which  corresponding methods are called and additional inputs are requested from the user through console.
