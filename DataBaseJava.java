@@ -8,9 +8,10 @@ public class DataBaseJava {
         try
         {    int option=0;
             Employee employee = new Employee();
+	    final String FILE_PATH = "/EmployeesInfo.txt";
             do
             {
-                System.out.println("Select an operation \n 1->Insert new Employee \n 2->Update password \n 3->Delete a record \n 4- Search for a Employee \n 5- Exit");
+                System.out.println("Select an operation \n 1->Insert new Employee \n 2->Update department \n 3->Delete a record \n 4->Search for a Employee \n 5->Exit \n 6->Import employee data from a txt file");
                 Scanner optionin = new Scanner(System.in);
                 option=optionin.nextInt();
                 switch(validateInputOption(option))
@@ -28,6 +29,9 @@ public class DataBaseJava {
                     	employee.searchEmployee();
                         break;
                     case EXIT:
+                        break;
+		    case IMPORT_EMPLOYEE_FROM_TXT_FILE:
+                        employee.importEmloyee(FILE_PATH);
                         break;
                     default:
                     	throw new IllegalArgumentException("Invalid Input");
@@ -54,6 +58,8 @@ public class DataBaseJava {
             	 return Options.SEARCH;
              case 5:
             	 return Options.EXIT;
+	    case 6:
+                 return Options.IMPORT_EMPLOYEE_FROM_TXT_FILE;
              default:
                  throw new IllegalArgumentException("Invalid Input");
          }
